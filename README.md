@@ -1,4 +1,4 @@
-
+![alt text](image.png)
 # GitHub Activity Tracker
 
 A Java command-line application that fetches and summarizes recent public activity of any GitHub user using the GitHub Events API.
