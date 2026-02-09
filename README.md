@@ -15,7 +15,7 @@ This tool connects directly to GitHub, parses raw JSON responses, and presents r
 * **Structured JSON Parsing**
   Uses Google Gson to convert raw API responses into readable summaries.
 
-* **Graceful Error Handling**
+* ** Error Handling**
   Handles invalid usernames, empty activity, and connection issues.
 
 * **Maven-Based Project**
