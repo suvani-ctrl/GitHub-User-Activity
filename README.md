@@ -1,43 +1,84 @@
-# GitHub-User-Activity
 
-![alt text](image.png)
+# GitHub Activity Tracker
 
+A Java command-line application that fetches and summarizes recent public activity of any GitHub user using the GitHub Events API.
 
-GitHub Activity Tracker
-A  Java command-line interface (CLI) tool that fetches and summarizes recent activity for any GitHub user using the GitHub Events API.
+This tool connects directly to GitHub, parses raw JSON responses, and presents readable activity summaries in the terminal.
 
-Features
-Real-time Fetching: Connects directly to api.github.com.
+---
 
-JSON Parsing: Uses Google's Gson library to transform raw JSON into human-readable summaries.
+## Features
 
-Error Handling: Manages invalid usernames and connection issues gracefully.
+* **Live GitHub Data**
+  Fetches real-time public events from `api.github.com`.
 
-Maven Powered: Automated dependency management and build lifecycle.
+* **Structured JSON Parsing**
+  Uses Google Gson to convert raw API responses into readable summaries.
 
-Prerequisites
-Java 17 or higher
+* **Graceful Error Handling**
+  Handles invalid usernames, empty activity, and connection issues.
 
-Maven 3.6+
+* **Maven-Based Project**
+  Clean dependency management and standard build lifecycle.
 
-Installation & Setup
+---
+
+## Prerequisites
+
+* Java 17 or higher
+* Maven 3.6 or higher
+* Internet connection
+
+---
+
+## Installation
+
 Clone the repository:
 
-Bash
+```bash
 git clone https://github.com/suvani-ctrl/GithubActivityTracker.git
 cd GithubActivityTracker
-Project Structure: Ensure your files are in the standard Maven layout: src/main/java/GithubActivityTracker/
+```
 
-How to Run
-Use Maven to clean, compile, and execute the application in one go:
+Ensure the project follows the standard Maven structure:
 
-Bash
+```
+src/
+ └── main/
+     └── java/
+         └── GithubActivityTracker/
+```
+
+---
+
+## How to Run
+
+Compile and execute the application using Maven:
+
+```bash
 mvn clean compile exec:java -Dexec.mainClass="GithubActivityTracker.Main"
-When prompted, enter a GitHub username (e.g., suvani-ctrl) to see their recent activity summary.
+```
 
-Architecture
-Main.java: Handles user input and coordinates the flow.
+When prompted, enter a GitHub username (for example: `suvani-ctrl`) to view their recent activity.
 
-Api.java: Manages the HTTP connection and requests.
+---
 
-Parser.java: Contains the logic for filtering specific GitHub Event types.
+## Project Architecture
+
+* **Main.java**
+  Handles user input and controls the application flow.
+
+* **Api.java**
+  Manages HTTP connections and GitHub API requests.
+
+* **Parser.java**
+  Filters and formats GitHub event types into readable output.
+
+---
+
+## Notes
+
+* Only public GitHub activity is accessible.
+* Rate limits apply according to GitHub’s API policy.
+* Authentication is not required for basic usage.
+
