@@ -24,7 +24,7 @@ Installation & Setup
 Clone the repository:
 
 Bash
-git clone https://github.com/your-username/GithubActivityTracker.git
+git clone https://github.com/suvani-ctrl/GithubActivityTracker.git
 cd GithubActivityTracker
 Project Structure: Ensure your files are in the standard Maven layout: src/main/java/GithubActivityTracker/
 
