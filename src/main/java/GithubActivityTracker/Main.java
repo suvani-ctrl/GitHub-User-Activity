@@ -1,4 +1,6 @@
 package GithubActivityTracker;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
 
@@ -14,18 +16,21 @@ public class Main {
             String username = scanner.nextLine();
             if(username.isEmpty()){
                 System.out.println("no username");
+                return "Error: Username cannot be blank";
             }
-            String final_url = "https://api.github.com/users/"+username;
+            String final_url = "https://api.github.com/users/"+username+"/events";
+            String finalResult = "Nopo activity found";
             try {
                HttpResponse<String> result =  Api.makeRequest(final_url);
-               System.out.println("The result is" +result);
-               System.out.println(result.body());
-            } catch (Exception e) {
-                System.out.println(e);
-                System.out.println("CRASH CRASH");
-                e.printStackTrace();
+               finalResult = Parser.EventParser(result.body());
+            //    System.out.println("The result is" +finalResult);
+            //    System.out.println(result.statusCode());
+            } catch (IOException | URISyntaxException | InterruptedException e) {
+
+                System.out.println("ERROR");
+               
             }
-            return final_url;
+            return finalResult;
             }
 
 }
